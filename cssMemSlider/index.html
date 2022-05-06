@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CSS Mem Slider</title>
+</head>
+
+<body>
+    <div class="slider">
+        <div class="slider_content">
+            <img src="images/1.png" alt="slide image" class="slider_img" id="image_1">
+            <img src="images/2.png" alt="slide image" class="slider_img" id="image_2">
+            <img src="images/3.png" alt="slide image" class="slider_img" id="image_3">
+            <img src="images/4.png" alt="slide image" class="slider_img" id="image_4">
+        </div>
+        <div class="slide_desc">
+            <p class="slide_text" id="text_1">Домашние животные программиста.</p>
+            <p class="slide_text" id="text_2">Запутанно? Да. Работает? Конечно.</p>
+            <p class="slide_text" id="text_3">У меня лапки, но я сделаль.</p>
+            <p class="slide_text" id="text_3">Когда решил объяснить, как работает GIT.</p>
+
+            <div class="slider_controls">
+                <label for="slide_1" class="control_label"></label>
+                <label for="slide_2" class="control_label"></label>
+                <label for="slide_3" class="control_label"></label>
+                <label for="slide_4" class="control_label"></label>
+            </div>
+        </div>
+        <div class="hidden">
+            <input type="radio" name="control" id="slide_1" checked>
+            <input type="radio" name="control" id="slide_1">
+            <input type="radio" name="control" id="slide_1">
+            <input type="radio" name="control" id="slide_1">
+        </div>
+    </div>
+</body>
+
+</html>
