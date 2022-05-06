@@ -1,11 +1,60 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 10px;
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-.hidden {
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.slider {
+    min-width: 320px;
+    max-width: 871px;
+    margin: 0 auto;
+}
+
+.slide_content {
+    border: 1.4rem solid #292929;
+}
+
+img {
+    width: 100%;
+}
+
+.slide_desc {
+    font-size: 2rem;
+    color: #FAFAFA;
+    background-color: #292929;
+    padding: 1rem 1.4rem 2.4rem;
+}
+
+.control,
+.slide_img,
+.slide_text {
     display: none;
+}
+
+#slide_1:checked~.slide_content>#image_1,
+#slide_1:checked~.slide_desc>#text_1 {
+    display: block;
+}
+
+#slide_2:checked~.slide_content>#image_2,
+#slide_2:checked~.slide_desc>#text_2 {
+    display: block;
+}
+
+#slide_3:checked~.slide_content>#image_3,
+#slide_3:checked~.slide_desc>#text_3 {
+    display: block;
+}
+
+#slide_4:checked~.slide_content>#image_4,
+#slide_4:checked~.slide_desc>#text_4 {
+    display: block;
 }
