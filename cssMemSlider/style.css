@@ -30,6 +30,9 @@ img {
     color: #FAFAFA;
     background-color: #292929;
     padding: 1rem 1.5rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .control,
@@ -56,4 +59,68 @@ img {
 #slide_4:checked~.slide_content>#image_4,
 #slide_4:checked~.slide_desc>#text_4 {
     display: block;
+}
+
+.slider_controls {
+    display: flex;
+}
+
+.control_label {
+    display: block;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.dot {
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #848484;
+    border: 0.3rem solid transparent;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.control_label:hover .dot {
+    background-color: #FAFAFA;
+}
+
+#slide_1:checked~.slide_desc>.slider_controls>#label_1 .dot {
+    background-color: transparent;
+    border-color: #848484;
+}
+
+#slide_1:checked~.slide_desc>.slider_controls>#label_1:hover .dot {
+    background-color: transparent;
+    border-color: #FAFAFA;
+}
+
+#slide_2:checked~.slide_desc>.slider_controls>#label_2 .dot {
+    background-color: transparent;
+    border-color: #848484;
+}
+
+#slide_2:checked~.slide_desc>.slider_controls>#label_2:hover .dot {
+    background-color: transparent;
+    border-color: #FAFAFA;
+}
+
+#slide_3:checked~.slide_desc>.slider_controls>#label_3 .dot {
+    background-color: transparent;
+    border-color: #848484;
+}
+
+#slide_3:checked~.slide_desc>.slider_controls>#label_3:hover .dot {
+    background-color: transparent;
+    border-color: #FAFAFA;
+}
+
+#slide_4:checked~.slide_desc>.slider_controls>#label_4 .dot {
+    background-color: transparent;
+    border-color: #848484;
+}
+
+#slide_4:checked~.slide_desc>.slider_controls>#label_4:hover .dot {
+    background-color: transparent;
+    border-color: #FAFAFA;
 }
