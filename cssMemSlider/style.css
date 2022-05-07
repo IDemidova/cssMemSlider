@@ -1,3 +1,4 @@
+/*Common*/
 * {
     padding: 0;
     margin: 0;
@@ -11,13 +12,14 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/*Desktop*/
 .slider {
     max-width: 728px;
+    background-color: #292929;
     margin: 0 auto;
 }
 
 .slide_content {
-    background-color: #292929;
     padding: 1.5rem;
 }
 
@@ -28,7 +30,6 @@ img {
 .slide_desc {
     font-size: 2rem;
     color: #FAFAFA;
-    background-color: #292929;
     padding: 1rem 1.5rem 2.5rem;
     display: flex;
     justify-content: space-between;
@@ -39,26 +40,6 @@ img {
 .slide_img,
 .slide_text {
     display: none;
-}
-
-#slide_1:checked~.slide_content>#image_1,
-#slide_1:checked~.slide_desc>#text_1 {
-    display: block;
-}
-
-#slide_2:checked~.slide_content>#image_2,
-#slide_2:checked~.slide_desc>#text_2 {
-    display: block;
-}
-
-#slide_3:checked~.slide_content>#image_3,
-#slide_3:checked~.slide_desc>#text_3 {
-    display: block;
-}
-
-#slide_4:checked~.slide_content>#image_4,
-#slide_4:checked~.slide_desc>#text_4 {
-    display: block;
 }
 
 .slider_controls {
@@ -83,6 +64,59 @@ img {
 
 .control_label:hover .dot {
     background-color: #FAFAFA;
+}
+
+/*Mobile*/
+@media (max-width: 768px) {
+    .slider {
+        margin: 0 2rem;
+    }
+
+    .slide_content {
+        padding: 1rem;
+    }
+
+    .slide_desc {
+        font-size: 1.5rem;
+        padding: 1rem 1rem 2rem;
+        flex-direction: column;
+    }
+
+    .slide_text {
+        order: 2;
+        align-self: start;
+    }
+
+    .slider_controls {
+        order: 1;
+        margin-bottom: 2rem;
+    }
+
+    .dot {
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+}
+
+/*States*/
+#slide_1:checked~.slide_content>#image_1,
+#slide_1:checked~.slide_desc>#text_1 {
+    display: block;
+}
+
+#slide_2:checked~.slide_content>#image_2,
+#slide_2:checked~.slide_desc>#text_2 {
+    display: block;
+}
+
+#slide_3:checked~.slide_content>#image_3,
+#slide_3:checked~.slide_desc>#text_3 {
+    display: block;
+}
+
+#slide_4:checked~.slide_content>#image_4,
+#slide_4:checked~.slide_desc>#text_4 {
+    display: block;
 }
 
 #slide_1:checked~.slide_desc>.slider_controls>#label_1 .dot {
