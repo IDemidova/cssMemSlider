@@ -3,6 +3,7 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -19,33 +20,59 @@ body {
     max-width: 728px;
     background-color: #292929;
     margin: 0 auto;
+    border: 1.5rem solid transparent;
+    overflow: hidden;
 }
 
-.slide_content {
-    padding: 1.5rem;
-}
-
-img {
-    width: 100%;
-}
-
-.slide_desc {
-    font-size: 2rem;
-    color: #FAFAFA;
-    padding: 1rem 1.5rem 2.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.control,
-.slide_img,
-.slide_text {
+.control {
     display: none;
 }
 
-.slider_controls {
+.slide_content {
+    width: 400%;
+    margin-bottom: 1.5rem;
     display: flex;
+    transition: 0.6s;
+}
+
+.slide {
+    width: 100%;
+}
+
+.slide_img {
+    width: 100%;
+}
+
+/* .slider_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+
+.slider_footer {
+    display: grid;
+    grid-template-rows: 1fr 0;
+    align-items: center;
+}
+
+.slide_desc {
+    width: 400%;
+    display: flex;
+    overflow: hidden;
+    transition: 0.6s;
+    grid-row: 1/2;
+}
+
+.slide_text {
+    width: 100%;
+    font-size: 2rem;
+    color: #FAFAFA;
+}
+
+.slider_controls {
+    background-color: #292929;
+    display: flex;
+    grid-row: 1/2;
 }
 
 .control_label {
@@ -56,12 +83,12 @@ img {
 
 .dot {
     display: block;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2rem;
+    height: 2rem;
     background-color: #848484;
     border: 0.3rem solid transparent;
     border-radius: 50%;
-    transition: 0.5s;
+    transition: 0.6s;
 }
 
 .control_label:hover .dot {
@@ -75,90 +102,86 @@ img {
         margin: 0 2rem;
     }
 
-    .slide_content {
-        padding: 1rem;
+    .slider_footer {
+        grid-template-rows: repeat(2, 1fr);
     }
 
     .slide_desc {
-        font-size: 1.5rem;
-        padding: 1rem 1rem 2rem;
-        flex-direction: column;
+        grid-row: 2/3;
     }
 
     .slide_text {
-        order: 2;
-        align-self: start;
+        font-size: 1.4rem;
     }
 
     .slider_controls {
-        order: 1;
-        margin-bottom: 2rem;
+        margin: 0 auto;
     }
 
     .dot {
-        width: 1.2rem;
-        height: 1.2rem;
+        width: 1.4rem;
+        height: 1.4rem;
     }
 }
 
 /*States*/
 
-#slide_1:checked~.slide_content>#image_1,
-#slide_1:checked~.slide_desc>#text_1 {
-    display: block;
+#control_1:checked~.slide_content,
+#control_1:checked~.slider_footer>.slide_desc {
+    margin-left: 0;
 }
 
-#slide_2:checked~.slide_content>#image_2,
-#slide_2:checked~.slide_desc>#text_2 {
-    display: block;
+#control_2:checked~.slide_content,
+#control_2:checked~.slider_footer>.slide_desc {
+    margin-left: -100%;
 }
 
-#slide_3:checked~.slide_content>#image_3,
-#slide_3:checked~.slide_desc>#text_3 {
-    display: block;
+#control_3:checked~.slide_content,
+#control_3:checked~.slider_footer>.slide_desc {
+    margin-left: -200%;
 }
 
-#slide_4:checked~.slide_content>#image_4,
-#slide_4:checked~.slide_desc>#text_4 {
-    display: block;
+#control_4:checked~.slide_content,
+#control_4:checked~.slider_footer>.slide_desc {
+    margin-left: -300%;
 }
 
-#slide_1:checked~.slide_desc>.slider_controls>#label_1 .dot {
+#control_1:checked~.slider_footer>.slider_controls>#label_1 .dot {
     background-color: transparent;
     border-color: #848484;
 }
 
-#slide_1:checked~.slide_desc>.slider_controls>#label_1:hover .dot {
+#control_1:checked~.slider_footer>.slider_controls>#label_1:hover .dot {
     background-color: transparent;
     border-color: #FAFAFA;
 }
 
-#slide_2:checked~.slide_desc>.slider_controls>#label_2 .dot {
+#control_2:checked~.slider_footer>.slider_controls>#label_2 .dot {
     background-color: transparent;
     border-color: #848484;
 }
 
-#slide_2:checked~.slide_desc>.slider_controls>#label_2:hover .dot {
+#control_2:checked~.slider_footer>.slider_controls>#label_2:hover .dot {
     background-color: transparent;
     border-color: #FAFAFA;
 }
 
-#slide_3:checked~.slide_desc>.slider_controls>#label_3 .dot {
+#control_3:checked~.slider_footer>.slider_controls>#label_3 .dot {
     background-color: transparent;
     border-color: #848484;
 }
 
-#slide_3:checked~.slide_desc>.slider_controls>#label_3:hover .dot {
+#control_3:checked~.slider_footer>.slider_controls>#label_3:hover .dot {
     background-color: transparent;
     border-color: #FAFAFA;
 }
 
-#slide_4:checked~.slide_desc>.slider_controls>#label_4 .dot {
+#control_4:checked~.slider_footer>.slider_controls>#label_4 .dot {
     background-color: transparent;
     border-color: #848484;
 }
 
-#slide_4:checked~.slide_desc>.slider_controls>#label_4:hover .dot {
+#control_4:checked~.slider_footer>.slider_controls>#label_4:hover .dot {
     background-color: transparent;
     border-color: #FAFAFA;
 }
