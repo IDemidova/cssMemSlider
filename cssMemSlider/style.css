@@ -65,7 +65,7 @@ body {
 
 .slide_text {
     width: 100%;
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: #FAFAFA;
 }
 
@@ -83,8 +83,8 @@ body {
 
 .dot {
     display: block;
-    width: 2rem;
-    height: 2rem;
+    width: 1.8rem;
+    height: 1.8rem;
     background-color: #848484;
     border: 0.3rem solid transparent;
     border-radius: 50%;
@@ -95,13 +95,17 @@ body {
     background-color: #FAFAFA;
 }
 
-/*Mobile*/
+/*Tablet*/
 
 @media (max-width: 768px) {
     .slider {
         margin: 0 2rem;
     }
+}
 
+/*Mobile*/
+
+@media (max-width: 568px) {
     .slider_footer {
         grid-template-rows: repeat(2, 1fr);
     }
