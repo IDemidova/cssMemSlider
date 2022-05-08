@@ -43,12 +43,6 @@ body {
     width: 100%;
 }
 
-/* .slider_footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-} */
-
 .slider_footer {
     display: grid;
     grid-template-rows: 1fr 0;
